@@ -1,89 +1,43 @@
-name: 🔬 Research (Araştırma)
-description: Teknoloji/yaklaşım araştırması
+name: 🔬 Araştırma
+description: Teknoloji araştır
 title: "[RESEARCH] "
 labels: ["research"]
 assignees: []
 
 body:
-  - type: markdown
-    attributes:
-      value: |
-        ## 🔬 Araştırma Görevi
-        Teknoloji seçimi veya yaklaşım araştırması
-  
   - type: textarea
     id: question
     attributes:
-      label: Araştırma Sorusu
-      description: Neyi araştırıyoruz?
-      placeholder: "On-device AI için TinyLlama mı yoksa Phi-2 mi kullanılmalı?"
+      label: Ne araştırılacak?
+      placeholder: "TinyLlama mı Phi-2 mi kullanmalıyız?"
     validations:
       required: true
   
   - type: textarea
-    id: scope
+    id: options
     attributes:
-      label: Kapsam
-      description: Hangi seçenekler karşılaştırılacak?
+      label: Seçenekler
       placeholder: |
-        Seçenekler:
-        1. TinyLlama 1.1B (4-bit quantized)
-        2. Phi-2 2.7B (4-bit quantized)
-        3. DistilBERT (lightweight alternatif)
+        1. TinyLlama (küçük, hızlı)
+        2. Phi-2 (büyük, daha akıllı)
     validations:
       required: true
-  
-  - type: textarea
-    id: criteria
-    attributes:
-      label: Değerlendirme Kriterleri
-      description: Nelere göre karar vereceğiz?
-      value: |
-        - [ ] Model boyutu (MB)
-        - [ ] Inference süresi (ms)
-        - [ ] RAM kullanımı
-        - [ ] Battery impact
-        - [ ] Türkçe NLP accuracy
-        - [ ] Offline çalışabilirlik
-    validations:
-      required: true
-  
-  - type: textarea
-    id: deliverable
-    attributes:
-      label: Çıktı (Deliverable)
-      description: Araştırma sonunda ne üretilecek?
-      placeholder: |
-        - docs/research/ai-model-comparison.md dosyası
-        - Benchmark sonuçları tablosu
-        - Öneri: Hangi model kullanılmalı? Neden?
-    validations:
-      required: true
-  
-  - type: input
-    id: deadline
-    attributes:
-      label: Son Tarih
-      description: Ne zamana kadar tamamlanmalı?
-      placeholder: "3 Kasım 2025"
   
   - type: input
     id: estimate
     attributes:
-      label: Tahmini Süre (saat)
-      placeholder: "12"
-    validations:
-      required: true
+      label: Kaç saat sürer?
+      placeholder: "8-12 saat"
   
   - type: dropdown
     id: assignee_role
     attributes:
-      label: Sorumlu Rol
+      label: Kim araştıracak?
       options:
-        - Emre (PM / Full Stack)
-        - Kişi 2 (AI/ML Engineer)
-        - Kişi 3 (Network Engineer)
-        - Kişi 4 (UI/UX Designer)
-        - Kişi 5 (Mobile Developer)
+        - Emre (PM)
+        - Kişi 2 (AI)
+        - Kişi 3 (Network)
+        - Kişi 4 (UI/UX)
+        - Kişi 5 (Mobile)
     validations:
       required: true

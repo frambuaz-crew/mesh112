@@ -1,63 +1,22 @@
-name: ✨ Feature Request
-description: Yeni özellik öner
+name: ✨ Yeni Özellik
+description: Özellik önerisi
 title: "[FEATURE] "
 labels: ["enhancement"]
 assignees: []
 
 body:
-  - type: markdown
-    attributes:
-      value: |
-        ## ✨ Yeni Özellik Önerisi
-  
   - type: textarea
-    id: problem
+    id: description
     attributes:
-      label: Problem / İhtiyaç
-      description: Hangi sorunu çözüyor veya hangi ihtiyacı karşılıyor?
-      placeholder: "Kullanıcılar gece karanlıkta ekranı göremiyorlar"
+      label: Ne istersin?
+      placeholder: "Dark mode olsun, gece kullanırken göz yoruyor"
     validations:
       required: true
   
   - type: textarea
-    id: solution
+    id: why
     attributes:
-      label: Önerilen Çözüm
-      description: Nasıl çözülmeli?
-      placeholder: "Dark mode ekleyelim - battery saving için de yararlı"
-    validations:
-      required: true
-  
-  - type: textarea
-    id: alternatives
-    attributes:
-      label: Alternatif Çözümler
-      description: Başka nasıl yapılabilir?
-      placeholder: "Ekran parlaklığı otomatik ayarlanabilir"
-  
-  - type: dropdown
-    id: priority
-    attributes:
-      label: Öncelik
-      options:
-        - Critical (MVP için gerekli)
-        - High (Kullanıcı deneyimi için önemli)
-        - Medium (İyi olur)
-        - Low (Nice to have)
-    validations:
-      required: true
-  
-  - type: dropdown
-    id: category
-    attributes:
-      label: Kategori
-      options:
-        - UI/UX
-        - Networking (BLE/WiFi)
-        - AI/ML
-        - Offline Storage
-        - Performance
-        - Security
-        - Other
+      label: Neden gerekli?
+      placeholder: "Battery de tasarruf eder, afet anında pil önemli"
     validations:
       required: true
