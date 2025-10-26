@@ -1,3 +1,4 @@
+
 # ⚡ GitHub Actions Automation - Hızlı Başlangıç
 
 ## 🎯 Ne Yapıyor?
@@ -79,7 +80,7 @@ git push origin test/automation
 ```
 
 **GitHub'da PR aç (develop'a)**:
-- Title: `test: automation workflow`
+- Title: `test: automation workfloww`
 - **Description (ÖNEMLİ!)**:
   ```markdown
   Closes #1
