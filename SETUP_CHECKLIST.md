@@ -144,42 +144,52 @@ Bu dokümandaki her adımı tamamladıkça checkboxları işaretleyin!
 
 ---
 
-## ✅ Faz 3: İletişim Kanalları (20 dakika)
+## ✅ Faz 3: İletişim Kanalları (15 dakika)
 
-### Slack Workspace (ÜCRETSİZ)
+### Discord Sunucusu (ÜCRETSİZ - ÖNERİLEN) ⭐
 
-- [ ] **Slack Workspace Oluştur**
-  - slack.com/create
-  - Workspace adı: `mesh112-team`
-  - Plan: **FREE** (90 gün mesaj geçmişi, 10 app entegrasyonu)
+> **Neden Discord?** Slack Free 90 günlük mesaj geçmişi sınırı koyuyor, Pro $43.75/ay. Discord tamamen ücretsiz ve sınırsız!
 
-- [ ] **Kanalları Oluştur**
+- [ ] **Discord Sunucusu Oluştur**
+  - discord.com → Giriş yap → "+" → Create My Own
+  - Sunucu adı: `MESH112 Team`
+  - Detaylı rehber: `DISCORD_SETUP.md`
+
+- [ ] **Kategoriler ve Kanallar Oluştur**
   ```
-  #general          → Genel duyurular, günlük sohbet
-  #dev              → Development discussions
-  #ai-ml            → AI/ML specific konular
-  #design           → UI/UX feedback
-  #testing          → Bug reports, test results
-  #random           → Offtopic, memes
-  #standup          → Daily standup (async)
-  #links            → Faydalı linkler, makaleler
-  #achievements     → Sprint başarıları, kutlamalar
+  📁 BİLGİLENDİRME
+     #hoşgeldin, #duyurular, #kaynaklar
+  
+  📁 GÜNLÜK İLETİŞİM
+     #genel, #random, #daily-standup
+  
+  📁 GELİŞTİRME
+     #mesh112-dev, #bug-reports, #feature-ideas, #github-updates
+  
+  📁 SPRINT YÖNETİMİ
+     #sprint-planning, #sprint-review, #metrics
+  
+  📁 SESLİ KANALLAR
+     🔊 Toplantı Odası, 🔊 Pair Programming
   ```
 
-- [ ] **Entegrasyonlar Ekle**
-  - GitHub → Slack (repo activity notifications)
-    - Slack: Apps → GitHub → Connect
-    - `/github subscribe mesh112-team/mesh112`
-    - Ayarlar: issues, pulls, commits, releases
-  - Google Calendar → Slack (meeting reminder'ları)
-  - Notion → Slack (sayfa güncellemeleri)
+- [ ] **GitHub Webhook Entegrasyonu**
+  - Discord: #github-updates → Ayarlar → Webhooks → New Webhook → Copy URL
+  - GitHub: Settings → Webhooks → Add webhook → Paste Discord URL/github
+  - Events: Pull requests, Pushes, Issues
+  - Test et: Dummy PR aç, Discord'da bildirim gelsin
 
-- [ ] **Bots ve Automations**
-  - Geekbot (daily standup automation) - ücretsiz
-  - Polly (poll'lar için) - ücretsiz
-  - Donut (coffee chat pairing) - ücretsiz
+- [ ] **Roller ve İzinler**
+  - @PM (Proje Yöneticisi) - Admin
+  - @Developer (Tüm ekip üyeleri)
+  - Roller: Server Settings → Roles → Create Role
 
-**Alternatif**: Discord (gamification, ses kanalları) - Tamamen ücretsiz
+- [ ] **Yararlı Botlar Ekle** (İsteğe Bağlı)
+  - Reminder Bot (toplantı hatırlatmaları)
+  - Poll Bot (oylama)
+  - GitHub Bot (resmi Discord GitHub entegrasyonu)
+
+**Alternatif**: Microsoft Teams (Office 365 varsa) veya Slack Pro ($43.75/ay)
 
 ---
 
