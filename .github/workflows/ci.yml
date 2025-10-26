@@ -1,0 +1,44 @@
+# Placeholder for CI workflow
+# This will be configured after React Native project setup
+
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    # Will be uncommented after React Native setup
+    # - name: Install dependencies
+    #   run: npm ci
+    
+    # - name: Run ESLint
+    #   run: npm run lint
+    
+    # - name: Run TypeScript check
+    #   run: npm run type-check
+    
+    # - name: Run tests
+    #   run: npm test -- --coverage
+    
+    # - name: Upload coverage to Codecov
+    #   uses: codecov/codecov-action@v3
+    #   with:
+    #     token: ${{ secrets.CODECOV_TOKEN }}
+
+    - name: Placeholder
+      run: echo "CI workflow ready for React Native project"
