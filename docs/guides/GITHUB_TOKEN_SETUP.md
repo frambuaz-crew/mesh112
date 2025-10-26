@@ -110,7 +110,15 @@ git push origin test/automation
 
 GitHub'da PR aç → develop'a
 
+**PR Description'a MUTLAKA ekle**:
+```markdown
+Closes #1
+```
+(#1 yerine oluşturduğun issue numarasını yaz, örneğin #5, #10 vb.)
+
 **Beklenen**: Otomatik Review'a geçer
+
+**NOT**: PR'ı issue ile bağlamak için description'da `Closes #X`, `Fixes #X` veya `Resolves #X` kullanmalısın!
 
 ---
 

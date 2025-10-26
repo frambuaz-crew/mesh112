@@ -76,15 +76,24 @@ git checkout -b test/automation
 echo "test" > test.txt
 git add . && git commit -m "test: automation"
 git push origin test/automation
-
-# GitHub'da PR aç (develop'a)
-# Description: Closes #[ISSUE_NO]
-# → Otomatik Review'a geçer
-
-# Merge PR → Otomatik Ready to Test
-
-# main'e merge → Otomatik Done + Close
 ```
+
+**GitHub'da PR aç (develop'a)**:
+- Title: `test: automation workflow`
+- **Description (ÖNEMLİ!)**:
+  ```markdown
+  Closes #1
+  ```
+  (Issue numarasını değiştir, örneğin #5, #10 vb.)
+
+**Beklenen**: 
+- PR ve issue otomatik bağlanır
+- Workflow log'unda "Found linked issues" mesajı görülür
+- Issue manuel Review'a taşınmalı (şimdilik GitHub Projects otomatik taşımayı desteklemiyor)
+
+**Merge PR → Otomatik Ready to Test**
+
+**main'e merge → Otomatik Done + Close**
 
 ---
 
