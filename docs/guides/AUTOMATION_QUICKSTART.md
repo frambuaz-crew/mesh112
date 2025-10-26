@@ -1,3 +1,4 @@
+
 # ⚡ GitHub Actions Automation - Hızlı Başlangıç
 
 ## 🎯 Ne Yapıyor?
@@ -103,12 +104,6 @@ git push origin main
 ```
 
 **→ Otomatik Done + Close ✅**
-- Workflow log'unda "Found linked issues" mesajı görülür
-- Issue manuel Review'a taşınmalı (şimdilik GitHub Projects otomatik taşımayı desteklemiyor)
-
-**Merge PR → Otomatik Ready to Test**
-
-**main'e merge → Otomatik Done + Close**
 
 ---
 
