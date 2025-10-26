@@ -72,13 +72,16 @@ Otomatik In Progress'e geçmeli
 ### Test 3: PR → Review → Ready to Test → Done
 
 ```bash
+git checkout develop  # Önce develop'a geç!
+git pull origin develop
 git checkout -b test/automation
 echo "test" > test.txt
 git add . && git commit -m "test: automation"
 git push origin test/automation
 ```
 
-**GitHub'da PR aç (develop'a)**:
+**GitHub'da PR aç**:
+- **Base: develop** ← Compare: test/automation (ÖNEMLİ!)
 - Title: `test: automation workflow`
 - **Description (ÖNEMLİ!)**:
   ```markdown
@@ -88,6 +91,18 @@ git push origin test/automation
 
 **Beklenen**: 
 - PR ve issue otomatik bağlanır
+- Workflow log'unda "Found linked issues" mesajı görülür
+
+**Merge PR (develop'a) → Otomatik Ready to Test ✅**
+
+**Sonra main'e merge (haftalık release)**:
+```bash
+git checkout main
+git merge develop
+git push origin main
+```
+
+**→ Otomatik Done + Close ✅**
 - Workflow log'unda "Found linked issues" mesajı görülür
 - Issue manuel Review'a taşınmalı (şimdilik GitHub Projects otomatik taşımayı desteklemiyor)
 

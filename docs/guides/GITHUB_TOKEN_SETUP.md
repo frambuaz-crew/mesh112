@@ -102,43 +102,57 @@ Issue sayfasında → Assignees → @emre
 
 #### 3. PR Aç
 ```bash
+git checkout develop  # ÖNEMLİ: develop'dan başla!
 git checkout -b test/automation
 echo "test" > test.txt
 git add . && git commit -m "test: automation"
 git push origin test/automation
 ```
 
-GitHub'da PR aç → develop'a
+**GitHub'da PR aç**:
+- Base: **develop** ← Compare: test/automation (DEVELOP'A MERGE ET!)
+- Title: `test: automation workflow`
+- Description: `Closes #X` (issue numarası)
 
-**PR Description'a MUTLAKA ekle**:
-```markdown
-Closes #1
-```
-(#1 yerine oluşturduğun issue numarasını yaz, örneğin #5, #10 vb.)
-
-**Beklenen**: Otomatik Review'a geçer
-
-**NOT**: PR'ı issue ile bağlamak için description'da `Closes #X`, `Fixes #X` veya `Resolves #X` kullanmalısın!
+**Beklenen**: Otomatik Review'a geçer (manuel taşıman gerek şimdilik)
 
 ---
 
 #### 4. PR Merge (develop)
-**Merge pull request** → develop'a
+**Merge pull request** → **develop** branch'ine
 
-**Beklenen**: Otomatik Ready to Test'e geçer
+**Beklenen**: Issue otomatik **Ready to Test** kolonuna geçer ✅
 
 ---
 
-#### 5. Main'e Merge
+#### 5. Haftalık Release - Main'e Merge (Cuma günleri)
 ```bash
 git checkout main
+git pull origin main
 git merge develop
 git push origin main
 ```
 
 **Beklenen**: 
-- Otomatik Done'a geçer
-- Issue otomatik kapanır
+- Issue otomatik **Done** kolonuna geçer ✅
+- Issue otomatik **kapanır** ✅
+
+---
+
+## 🎯 Doğru Workflow Özeti
+
+```
+Feature branch → develop (PR) → Ready to Test
+                    ↓
+              (Hafta sonu)
+                    ↓
+              develop → main → Done + Close
+```
+
+**ÖNEMLİ**: 
+- ❌ Feature branch → main (YAPMA! Direkt Done'a gider)
+- ✅ Feature branch → develop → Ready to Test (DOĞRU!)
+- ✅ develop → main (haftada 1 kez) → Done
 
 ---
 
