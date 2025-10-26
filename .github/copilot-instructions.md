@@ -269,6 +269,6 @@ Use semantic prefixes:
 
 ---
 
-**Disaster-Resilient Turkey Initiative | #MESH112 | #AcilDurum**
+**Disaster-Resilient Turkey Initiative | MESH112 | AcilDurum**
 
 When in doubt, prioritize **offline functionality**, **battery efficiency**, and **one-tap emergency actions**. This app must work when everything else fails.

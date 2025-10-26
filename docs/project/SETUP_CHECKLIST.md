@@ -1,6 +1,6 @@
 # 🚀 MESH112 - Project Manager Setup Checklist
 
-**Hazırlayan**: Project Manager (Kişi 1)  
+**Hazırlayan**: Emre (PM)  
 **Tarih**: 26 Ekim 2025  
 **Durum**: ⏳ Kurulum Aşamasında
 
@@ -13,91 +13,43 @@ Bu dokümandaki her adımı tamamladıkça checkboxları işaretleyin!
 ### GitHub Organization & Repository
 
 - [x] **Lokal Git Init** (✅ TAMAMLANDI)
-- [ ] **GitHub'da Organization Oluştur**
-  - GitHub'a giriş yap: https://github.com
-  - Sağ üst köşe → "+" → "New organization"
-  - Organization adı: `mesh112-team` veya `mesh112-turkey`
-  - Plan: **FREE** (sınırsız public repo, 2000 Actions dakikası/ay)
-  - Ekip üyelerini davet et (5 kişi)
-
-- [ ] **Repository Oluştur**
-  - Organization altında: "New repository"
-  - Repo adı: `mesh112`
-  - Açıklama: "🚨 Emergency disaster communication platform with mesh networking and on-device AI"
-  - Visibility: **Public** (açık kaynak)
-  - `.gitignore`: None (zaten var)
-  - License: None (zaten var - MIT)
-  - README: None (zaten var)
-
-- [ ] **Lokal Repo'yu GitHub'a Bağla**
-  ```bash
-  git remote add origin https://github.com/ORGANIZATION_NAME/mesh112.git
-  git branch -M main
-  git push -u origin main
-  ```
-
-- [ ] **Repository Settings Ayarları**
-  - Settings → General → Features
-    - ✅ Issues (bug tracking)
-    - ✅ Projects (kanban board - klasik veya beta)
-    - ✅ Discussions (forum)
-    - ✅ Wiki (dokümantasyon)
-  - Settings → Branches → Branch protection rules
-    - Branch: `main`
-    - ✅ Require pull request reviews before merging (1 approval)
-    - ✅ Require status checks to pass (CI/CD)
-    - ✅ Do not allow bypassing
-
-- [ ] **Labels Oluştur** (Issues için)
-  - Issues → Labels → New label
-  - Önerilen labels:
-    ```
-    priority-critical (red)
-    priority-high (orange)
-    priority-medium (yellow)
-    priority-low (blue)
-    
-    type-bug (red)
-    type-feature (green)
-    type-enhancement (blue)
-    type-documentation (grey)
-    
-    component-ai (purple)
-    component-ble (cyan)
-    component-ui (pink)
-    component-backend (brown)
-    
-    good-first-issue (green)
-    help-wanted (yellow)
-    ```
+- [x] **GitHub'da Organization Oluştur** (✅ TAMAMLANDI - frambuaz-crew)
+- [x] **Repository Oluştur** (✅ TAMAMLANDI - mesh112)
+- [x] **Lokal Repo'yu GitHub'a Bağla** (✅ TAMAMLANDI)
+- [x] **Repository Settings Ayarları** (✅ Branch protection main + develop)
+- [x] **Labels Oluştur** (✅ 23 label oluşturuldu)
 
 ---
 
-## ✅ Faz 2: Proje Yönetimi Araçları (30 dakika)
+## ✅ Faz 2: GitHub Projects Automation (30 dakika)
 
-### Seçenek A: GitHub Projects (ÜCRETSİZ - ÖNERİLEN)
+**NOT**: Issue templates kaldırıldı! Basit issue açıp, GitHub Projects automation ile yönetiyoruz.
 
-**Neden?** GitHub ile entegre, kod-issue bağlantısı kolay, ücretsiz
+### GitHub Projects Kurulumu
 
-- [ ] **GitHub Projects Beta Oluştur**
-  - Organization → Projects → New project
-  - Template: **Team backlog**
-  - Proje adı: "MESH112 Development"
-  - Görünümler:
-    - 📋 **Board** (Kanban): Backlog → To Do → In Progress → Review → Done
-    - 📅 **Roadmap** (Timeline): 18 hafta sprint'leri
-    - 📊 **Table** (Spreadsheet): Tüm task'lar detaylı
+- [x] **GitHub Projects Oluştur** (✅ TAMAMLANDI - MESH112 Development)
+- [ ] **Kolonları Yeniden Düzenle**
+  - Backlog
+  - To Do
+  - In Progress
+  - Review
+  - Ready to Test
+  - Done
 
-- [ ] **Sprint'leri Oluştur**
-  - Custom field ekle: "Sprint" (select)
-  - Options: Sprint 0, Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6
-  - Custom field: "Team Member" (select)
-  - Options: PM, AI Engineer, Mobile Dev, Network Engineer, UI/UX Designer
+- [ ] **Custom Fields Ekle**
+  - [ ] Sprint (Select): Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6
+  - [ ] Story Points (Number): 1, 2, 3, 5, 8, 13
+  - [ ] Priority (Select): 🔴 High, 🟡 Medium, 🟢 Low
+  - [ ] Assignee: Emre, Furkan, Oğuz, Hasan, Sümeyye
 
-- [ ] **İlk Issues Oluştur** (Hafta 1 task'ları)
-  ```
-  Kişi 1 (PM):
-  - [ ] #1 Jira/Notion workspace setup
+- [ ] **Automation Workflows Kur** (ÖNEMLİ!)
+  - [ ] **Kural 1**: Yeni issue → Backlog
+  - [ ] **Kural 2**: Assignee eklendi → In Progress
+  - [ ] **Kural 3**: PR açıldı → Review
+  - [ ] **Kural 4**: PR merged (develop) → Ready to Test
+  - [ ] **Kural 5**: PR merged (main) → Done + Close issue
+
+**Detaylı Kurulum**: `docs/guides/GITHUB_PROJECTS_AUTOMATION.md`
   - [ ] #2 GitHub organization configuration
   - [ ] #3 Slack workspace setup
   - [ ] #4 TÜBİTAK 2204 başvuru hazırlığı
