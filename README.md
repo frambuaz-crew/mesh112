@@ -292,7 +292,33 @@ We welcome contributions! Please read [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
-### 📄 License
+### � Documentation
+
+```
+docs/
+├── guides/                          # Usage guides
+│   ├── WORKFLOW_GUIDE.md           # Git workflow & PR process
+│   ├── DISCORD_SETUP.md            # Team communication setup
+│   └── TEAM_ONBOARDING.md          # New member quick start
+│
+├── project/                         # Project documentation
+│   ├── PROJE_PLANI.md              # 18-week development plan (Turkish)
+│   ├── MESH112_DETAYLI_ACIKLAMA.md # Detailed project description (Turkish)
+│   └── SETUP_CHECKLIST.md          # PM infrastructure checklist
+│
+└── troubleshooting/                 # Problem solving
+    └── DISCORD_WEBHOOK_FIX.md      # Discord webhook integration fixes
+```
+
+**Start here**:
+- 👨‍💼 **Project Manager**: [docs/project/SETUP_CHECKLIST.md](docs/project/SETUP_CHECKLIST.md)
+- 👨‍💻 **Developers**: [docs/guides/WORKFLOW_GUIDE.md](docs/guides/WORKFLOW_GUIDE.md)
+- 🆕 **New Team Members**: [docs/guides/TEAM_ONBOARDING.md](docs/guides/TEAM_ONBOARDING.md)
+- 📋 **Full Project Plan**: [docs/project/PROJE_PLANI.md](docs/project/PROJE_PLANI.md)
+
+---
+
+### �📄 License
 
 This project is licensed under the [MIT License](LICENSE).
 
