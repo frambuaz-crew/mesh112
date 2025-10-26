@@ -77,7 +77,7 @@ git checkout develop  # Önce develop'a geç!
 git pull origin develop
 git checkout -b test/automation
 echo "test" > test.txt
-git add . && git commit -m "test: automation"
+git add . && git commit -m "test: automationn"
 git push origin test/automation
 ```
 
