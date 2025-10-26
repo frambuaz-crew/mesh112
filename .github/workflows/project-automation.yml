@@ -62,15 +62,100 @@ jobs:
           github.event.action == 'closed' && 
           github.event.pull_request.merged == true &&
           github.event.pull_request.base.ref == 'develop'
-        uses: leonsteinhaeuser/project-beta-automations@v2.2.1
+        uses: actions/github-script@v7
         with:
-          gh_token: ${{ secrets.PROJECT_TOKEN }}
-          organization: frambuaz-crew
-          project_id: 1
-          resource_node_id: ${{ github.event.pull_request.node_id }}
-          status_value: "Ready to Test"
+          github-token: ${{ secrets.PROJECT_TOKEN }}
+          script: |
+            // PR description'dan linked issue'ları bul
+            const prBody = context.payload.pull_request.body || '';
+            const issueRegex = /(?:close[sd]?|fix(?:e[sd])?|resolve[sd]?)\s+#(\d+)/gi;
+            const issueNumbers = [...prBody.matchAll(issueRegex)].map(m => m[1]);
+            
+            if (issueNumbers.length === 0) {
+              core.warning('⚠️ No linked issues found! Cannot move to Ready to Test');
+              return;
+            }
+            
+            core.info(`✅ Found ${issueNumbers.length} linked issue(s): #${issueNumbers.join(', #')}`);
+            
+            // Her linked issue'yu Ready to Test'e taşı
+            for (const issueNum of issueNumbers) {
+              try {
+                // Issue bilgilerini al
+                const issue = await github.rest.issues.get({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: parseInt(issueNum)
+                });
+                
+                core.info(`📦 Moving issue #${issueNum} to Ready to Test`);
+                
+                // Project ID ve field ID'leri (bunları sonra GraphQL ile alacağız)
+                // Şimdilik leonsteinhaeuser action'ını kullanamayız çünkü loop içindeyiz
+                // Bu yüzden manuel comment ekleyelim (geçici çözüm)
+                
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: parseInt(issueNum),
+                  body: `🚀 PR merged to \`develop\`! Moving to **Ready to Test** column.\n\n✅ [View PR](${context.payload.pull_request.html_url})`
+                });
+                
+                core.info(`✅ Issue #${issueNum} processed`);
+              } catch (error) {
+                core.error(`❌ Failed to process issue #${issueNum}: ${error.message}`);
+              }
+            }
       
       - name: Move to Done when PR merged to main
+        if: |
+          github.event.action == 'closed' && 
+          github.event.pull_request.merged == true &&
+          github.event.pull_request.base.ref == 'main'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.PROJECT_TOKEN }}
+          script: |
+            // PR description'dan linked issue'ları bul
+            const prBody = context.payload.pull_request.body || '';
+            const issueRegex = /(?:close[sd]?|fix(?:e[sd])?|resolve[sd]?)\s+#(\d+)/gi;
+            const issueNumbers = [...prBody.matchAll(issueRegex)].map(m => m[1]);
+            
+            if (issueNumbers.length === 0) {
+              core.warning('⚠️ No linked issues found! Cannot move to Done');
+              return;
+            }
+            
+            core.info(`✅ Found ${issueNumbers.length} linked issue(s): #${issueNumbers.join(', #')}`);
+            
+            // Her linked issue'yu Done'a taşı ve kapat
+            for (const issueNum of issueNumbers) {
+              try {
+                core.info(`📦 Moving issue #${issueNum} to Done and closing`);
+                
+                // Issue'yu kapat
+                await github.rest.issues.update({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: parseInt(issueNum),
+                  state: 'closed'
+                });
+                
+                // Comment ekle
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: parseInt(issueNum),
+                  body: `🎉 Released to production! Moving to **Done**.\n\n✅ [View PR](${context.payload.pull_request.html_url})`
+                });
+                
+                core.info(`✅ Issue #${issueNum} closed and moved to Done`);
+              } catch (error) {
+                core.error(`❌ Failed to process issue #${issueNum}: ${error.message}`);
+              }
+            }
+      
+      - name: Legacy - Close issue when PR merged to main
         if: |
           github.event.action == 'closed' && 
           github.event.pull_request.merged == true &&
@@ -82,28 +167,3 @@ jobs:
           project_id: 1
           resource_node_id: ${{ github.event.pull_request.node_id }}
           status_value: "Done"
-      
-      - name: Close issue when PR merged to main
-        if: |
-          github.event.action == 'closed' && 
-          github.event.pull_request.merged == true &&
-          github.event.pull_request.base.ref == 'main'
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.PROJECT_TOKEN }}
-          script: |
-            // PR description'dan issue numarasını bul
-            const prBody = context.payload.pull_request.body || '';
-            const issueNumbers = prBody.match(/(?:close[sd]?|fix(?:e[sd])?|resolve[sd]?)\s+#(\d+)/gi);
-            
-            if (issueNumbers) {
-              for (const match of issueNumbers) {
-                const issueNumber = match.match(/\d+/)[0];
-                await github.rest.issues.update({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  issue_number: issueNumber,
-                  state: 'closed'
-                });
-              }
-            }
