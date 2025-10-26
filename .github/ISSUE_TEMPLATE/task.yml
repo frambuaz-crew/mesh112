@@ -35,10 +35,10 @@ body:
     attributes:
       label: Kim yapacak?
       options:
-        - Emre (PM)
-        - Kişi 2 (AI)
-        - Kişi 3 (Network)
-        - Kişi 4 (UI/UX)
-        - Kişi 5 (Mobile)
+        - Emre (PM / Full Stack)
+        - Furkan (AI/ML Engineer)
+        - Oğuz (Network Engineer)
+        - Hasan (Mobile Developer)
+        - Sümeyye (UI/UX Designer)
     validations:
       required: true

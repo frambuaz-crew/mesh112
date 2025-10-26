@@ -11,20 +11,20 @@
 ### 🗓️ Hafta 1 (28 Eki - 3 Kas): Ekip Toplama & Altyapı
 
 #### Öncelik 1: Ekip Oluşturma
-- [ ] **Kişi 2 (AI/ML Engineer)** - Aday bul ve davet et
+- [ ] **Furkan (AI/ML Engineer)** - Aday bul ve davet et
   - Kriterler: Python, TensorFlow/PyTorch, NLP tecrübesi
   - Teklif: TÜBİTAK 2204 proje üyeliği
   - İletişim: Discord/WhatsApp/LinkedIn
   
-- [ ] **Kişi 3 (Network Engineer)** - Aday bul ve davet et
+- [ ] **Oğuz (Network Engineer)** - Aday bul ve davet et
   - Kriterler: Mesh networking, BLE/WiFi, Protocol bilgisi
   - Teklif: Patent çıkarma fırsatı
   
-- [ ] **Kişi 4 (UI/UX Designer)** - Aday bul ve davet et
+- [ ] **Sümeyye (UI/UX Designer)** - Aday bul ve davet et
   - Kriterler: Figma, Mobile UI, Emergency design tecrübesi
   - Portfolio kontrol
   
-- [ ] **Kişi 5 (Mobile Developer)** - Aday bul ve davet et
+- [ ] **Hasan (Mobile Developer)** - Aday bul ve davet et
   - Kriterler: React Native, iOS+Android, Published app
   - GitHub profili incelemesi
 
@@ -244,7 +244,7 @@ Her hafta sonunda kontrol et:
 
 ---
 
-**Hazırlayan**: Emre (Kişi 1 - PM)  
+**Hazırlayan**: Emre (PM)  
 **Başlangıç**: 28 Ekim 2025  
 **Sprint 1 Başlangıcı**: 25 Kasım 2025
 

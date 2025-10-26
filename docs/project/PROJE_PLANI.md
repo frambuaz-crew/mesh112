@@ -252,17 +252,17 @@ jobs:
 
 | Rol | Kişi | Ana Sorumluluklar |
 |-----|------|-------------------|
-| **Project Manager / Full Stack Dev** | Kişi 1 | Sprint planning, backend API, cloud sync, ekip koordinasyonu |
-| **AI/ML Engineer** | Kişi 2 | On-device AI model, ONNX entegrasyonu, message classification |
-| **Mobile Developer (iOS/Android)** | Kişi 3 | React Native core, BLE/WiFi integration, navigation |
-| **Network Engineer / Backend** | Kişi 4 | Mesh routing algoritması, multi-hop logic, message deduplication |
-| **UI/UX Designer / Frontend** | Kişi 5 | Figma design, React Native UI components, user testing |
+| **Project Manager / Full Stack Dev** | Emre | Sprint planning, backend API, cloud sync, ekip koordinasyonu |
+| **AI/ML Engineer** | Furkan | On-device AI model, ONNX entegrasyonu, message classification |
+| **Mobile Developer (iOS/Android)** | Hasan | React Native core, BLE/WiFi integration, navigation |
+| **Network Engineer / Backend** | Oğuz | Mesh routing algoritması, multi-hop logic, message deduplication |
+| **UI/UX Designer / Frontend** | Sümeyye | Figma design, React Native UI components, user testing |
 
 ---
 
 ### 3.2 Detaylı Rol Açıklamaları
 
-#### 👔 Project Manager / Full Stack Developer (Kişi 1)
+#### 👔 Project Manager / Full Stack Developer (Emre)
 
 **Sorumluluklar**:
 - ✅ Sprint planning ve daily standup'lar organize etme
@@ -280,7 +280,7 @@ jobs:
 
 ---
 
-#### 🤖 AI/ML Engineer (Kişi 2)
+#### 🤖 AI/ML Engineer (Furkan)
 
 **Sorumluluklar**:
 - ✅ TinyLlama/Phi-2 model araştırma ve seçimi
@@ -298,7 +298,7 @@ jobs:
 
 ---
 
-#### 📱 Mobile Developer (Kişi 3)
+#### 📱 Mobile Developer (Hasan)
 
 **Sorumluluklar**:
 - ✅ React Native proje setup (TypeScript, ESLint, Prettier)
@@ -317,7 +317,7 @@ jobs:
 
 ---
 
-#### 🌐 Network Engineer / Backend Developer (Kişi 4)
+#### 🌐 Network Engineer / Backend Developer (Oğuz)
 
 **Sorumluluklar**:
 - ✅ Mesh network routing algoritması tasarımı (AODV/Flooding hybrid)
@@ -336,7 +336,7 @@ jobs:
 
 ---
 
-#### 🎨 UI/UX Designer / Frontend Developer (Kişi 5)
+#### 🎨 UI/UX Designer / Frontend Developer (Sümeyye)
 
 **Sorumluluklar**:
 - ✅ User research ve persona oluşturma (afetzede, kurtarma ekibi, doktor)
@@ -388,7 +388,7 @@ Bazı görevler tüm ekibin katılımını gerektirir:
 
 #### **Hafta 1-3: Araştırma & Analiz**
 
-| Hafta | Kişi 1 (PM) | Kişi 2 (AI) | Kişi 3 (Mobile) | Kişi 4 (Network) | Kişi 5 (UI/UX) |
+| Hafta | Emre (PM) | Furkan (AI) | Hasan (Mobile) | Oğuz (Network) | Sümeyye (UI/UX) |
 |-------|-------------|-------------|-----------------|------------------|----------------|
 | **1** | Proje planı, Jira setup | TinyLlama vs Phi-2 araştırma | React Native best practices | Mesh routing araştırma (AODV) | User persona oluşturma |
 | **2** | Backend tech stack seçimi | Turkish NLP dataset araştırma | BLE library benchmark | Message protocol tasarımı | Wireframe'ler (4 ekran) |
@@ -400,7 +400,7 @@ Bazı görevler tüm ekibin katılımını gerektirir:
 
 #### **Hafta 4-6: Tasarım & Prototip**
 
-| Hafta | Kişi 1 (PM) | Kişi 2 (AI) | Kişi 3 (Mobile) | Kişi 4 (Network) | Kişi 5 (UI/UX) |
+| Hafta | Emre (PM) | Furkan (AI) | Hasan (Mobile) | Oğuz (Network) | Sümeyye (UI/UX) |
 |-------|-------------|-------------|-----------------|------------------|----------------|
 | **4** | Firebase setup | Model fine-tuning dataset | RN proje init (TypeScript) | SQLite schema tasarımı | Figma design system |
 | **5** | CI/CD pipeline (GitHub Actions) | ONNX model export | BLE library entegrasyonu | Message queue tasarımı | Chat ekranı mockup |
@@ -412,7 +412,7 @@ Bazı görevler tüm ekibin katılımını gerektirir:
 
 #### **Hafta 7-9: Sprint 2 - BLE Mesh Core**
 
-| Hafta | Kişi 1 (PM) | Kişi 2 (AI) | Kişi 3 (Mobile) | Kişi 4 (Network) | Kişi 5 (UI/UX) |
+| Hafta | Emre (PM) | Furkan (AI) | Hasan (Mobile) | Oğuz (Network) | Sümeyye (UI/UX) |
 |-------|-------------|-------------|-----------------|------------------|----------------|
 | **7** | Backend API endpoints | Mock AI responses | BLE scan/advertise | Peer discovery logic | Chat UI components |
 | **8** | User auth (Firebase) | Model entegrasyonu başlangıç | Message send/receive | Multi-hop routing | Message bubble styling |
@@ -424,7 +424,7 @@ Bazı görevler tüm ekibin katılımını gerektirir:
 
 #### **Hafta 10-12: Sprint 3 - Advanced Networking**
 
-| Hafta | Kişi 1 (PM) | Kişi 2 (AI) | Kişi 3 (Mobile) | Kişi 4 (Network) | Kişi 5 (UI/UX) |
+| Hafta | Emre (PM) | Furkan (AI) | Hasan (Mobile) | Oğuz (Network) | Sümeyye (UI/UX) |
 |-------|-------------|-------------|-----------------|------------------|----------------|
 | **10** | Analytics entegrasyonu | Classification accuracy test | GPS location tracking | TTL yönetimi | Harita ekranı geliştirme |
 | **11** | Cloud sync logic | Priority scoring optimize | OpenStreetMap tiles | Network topology graph | User marker tasarımı |
@@ -436,7 +436,7 @@ Bazı görevler tüm ekibin katılımını gerektirir:
 
 #### **Hafta 13-15: Sprint 4 - AI & Geolocation**
 
-| Hafta | Kişi 1 (PM) | Kişi 2 (AI) | Kişi 3 (Mobile) | Kişi 4 (Network) | Kişi 5 (UI/UX) |
+| Hafta | Emre (PM) | Furkan (AI) | Hasan (Mobile) | Oğuz (Network) | Sümeyye (UI/UX) |
 |-------|-------------|-------------|-----------------|------------------|----------------|
 | **13** | Performance monitoring | Translation model | SOS broadcast logic | Emergency message routing | SOS animation |
 | **14** | Crash reporting setup | Blood type matching AI | Map + GPS entegrasyonu | Location-based proximity | Filter UI (category) |
