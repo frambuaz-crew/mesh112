@@ -16,11 +16,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-        cache: 'npm'
+    # Node.js setup will be enabled after React Native project initialization
+    # - name: Setup Node.js
+    #   uses: actions/setup-node@v3
+    #   with:
+    #     node-version: '18'
+    #     cache: 'npm'
     
     # Will be uncommented after React Native setup
     # - name: Install dependencies
