@@ -1,0 +1,69 @@
+name: 🐛 Bug Report
+description: Bir bug bildirin
+title: "[BUG] "
+labels: ["bug", "needs-triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🐛 Bug Raporu
+        Sorunu detaylı açıklayın.
+  
+  - type: textarea
+    id: description
+    attributes:
+      label: Açıklama
+      description: Bug ne yapıyor?
+      placeholder: "SOS butonu tıklayınca uygulama çöküyor"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: steps
+    attributes:
+      label: Adımlar (Reproduce)
+      description: Bug'ı tekrar yaratmak için
+      placeholder: |
+        1. Ana ekrana git
+        2. SOS butonuna tıkla
+        3. Uygulama çöküyor
+    validations:
+      required: true
+  
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - Android
+        - iOS
+        - Her ikisi
+    validations:
+      required: true
+  
+  - type: input
+    id: version
+    attributes:
+      label: Uygulama Versiyonu
+      placeholder: "v1.0.0-sprint-2"
+  
+  - type: textarea
+    id: logs
+    attributes:
+      label: Loglar / Hata Mesajı
+      description: Console output varsa buraya yapıştır
+      render: shell
+  
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Öncelik
+      options:
+        - Critical (Uygulama kullanılamıyor)
+        - High (Önemli özellik çalışmıyor)
+        - Medium (Bazı durumlarda sorun)
+        - Low (Kozmetik)
+    validations:
+      required: true

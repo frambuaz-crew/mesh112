@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Discord - Genel Sohbet
+    url: https://discord.gg/mesh112
+    about: Hızlı sorular için Discord #genel kanalında sor
+  - name: 📚 Dökümanlar
+    url: https://github.com/frambuaz-crew/mesh112/tree/main/docs
+    about: Proje dökümanlarını incele
+  - name: 🆘 Acil Destek
+    url: https://discord.gg/mesh112
+    about: Acil durumlar için Discord'da @Proje Yöneticisi mention at
